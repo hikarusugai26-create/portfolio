@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rion & Co. Portfolio｜AI×高速制作のWeb・チラシ実績</title>
+<meta name="description" content="Rion & Co.（須賀井）の制作実績。AIを活用したLP・ホームページ・チラシをスピード重視で制作します。クラウドワークス・ココナラからのご依頼歓迎。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#05111e;
+  --bg-2:#0a1c2e;
+  --panel:rgba(255,255,255,0.04);
+  --line:rgba(255,255,255,0.08);
+  --text:#e8eef5;
+  --muted:#8b9bb0;
+  --teal:#00C9A7;
+  --blue:#3B82F6;
+  --gold:#F0BC4A;
+  --pink:#F472B6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter','Noto Sans JP',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* Background */
+.bg-grid{
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0,201,167,0.12), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(59,130,246,0.10), transparent 50%),
+    var(--bg);
+}
+.bg-grid::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+/* Nav */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,17,30,0.7);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:18px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{
+  font-weight:900;font-size:20px;letter-spacing:0.5px;
+  background:linear-gradient(120deg,#fff 30%, var(--teal));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.nav-cta{
+  background:linear-gradient(135deg, var(--teal), var(--blue));
+  color:#001a17;font-weight:700;
+  padding:10px 20px;border-radius:8px;font-size:14px;
+  transition:transform .2s, box-shadow .2s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,201,167,0.4)}
+
+/* Hero */
+.hero{
+  max-width:1200px;margin:0 auto;
+  padding:80px 24px 60px;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:999px;
+  background:rgba(0,201,167,0.1);
+  border:1px solid rgba(0,201,167,0.3);
+  font-size:13px;color:var(--teal);font-weight:600;
+  margin-bottom:24px;
+}
+.hero-badge::before{
+  content:'';width:8px;height:8px;border-radius:50%;
+  background:var(--teal);
+  box-shadow:0 0 12px var(--teal);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{50%{opacity:0.4}}
+.hero h1{
+  font-size:clamp(34px,6vw,64px);
+  font-weight:900;line-height:1.15;
+  margin-bottom:24px;
+  letter-spacing:-0.02em;
+}
+.hero h1 .grad{
+  background:linear-gradient(120deg, var(--teal) 20%, var(--blue) 60%, var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% 100%;
+  animation:shimmer 4s ease-in-out infinite;
+}
+@keyframes shimmer{50%{background-position:100% 0}}
+.hero p{
+  font-size:clamp(15px,2vw,18px);
+  color:var(--muted);max-width:680px;margin:0 auto 36px;
+}
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;max-width:760px;margin:0 auto;
+}
+.stat{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;padding:18px 12px;
+}
+.stat-num{
+  font-size:clamp(22px,3.5vw,32px);font-weight:900;
+  background:linear-gradient(120deg, var(--teal), var(--blue));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* Section */
+section{max-width:1200px;margin:0 auto;padding:80px 24px}
+.sec-eyebrow{
+  display:inline-block;color:var(--teal);
+  font-size:13px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  font-size:clamp(28px,4.5vw,42px);
+  font-weight:900;line-height:1.25;margin-bottom:18px;
+  letter-spacing:-0.01em;
+}
+.sec-desc{color:var(--muted);font-size:15px;max-width:640px;margin-bottom:48px}
+
+/* Works */
+.works{display:grid;gap:40px}
+.work{
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.work:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,201,167,0.3);
+  box-shadow:0 30px 60px rgba(0,0,0,0.4);
+}
+.work-img{
+  position:relative;overflow:hidden;
+  background:#000;min-height:320px;
+}
+.work-img img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:transform .6s;
+}
+.work:hover .work-img img{transform:scale(1.05)}
+.work-content{padding:36px;display:flex;flex-direction:column;justify-content:center}
+.work-tag{
+  display:inline-block;font-size:12px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.tag-lp{color:var(--teal)}
+.tag-flyer{color:var(--gold)}
+.tag-ec{color:var(--pink)}
+.work h3{
+  font-size:24px;font-weight:800;line-height:1.35;
+  margin-bottom:14px;
+}
+.work-desc{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.work-meta{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;
+}
+.chip{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--line);
+  border-radius:6px;padding:5px 11px;
+  font-size:12px;color:#cdd8e4;font-weight:500;
+}
+.work-links{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  background:linear-gradient(135deg, var(--teal), var(--blue));
+  color:#001a17;font-weight:700;
+  padding:11px 20px;border-radius:8px;font-size:14px;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,201,167,0.4)}
+.btn-secondary{
+  background:transparent;
+  color:var(--text);font-weight:600;
+  padding:11px 20px;border-radius:8px;font-size:14px;
+  border:1px solid var(--line);
+  transition:border-color .2s, background .2s;
+}
+.btn-secondary:hover{border-color:var(--teal);background:rgba(0,201,167,0.05)}
+
+.work.reverse{grid-template-columns:0.9fr 1.1fr}
+.work.reverse .work-img{order:2}
+.work.reverse .work-content{order:1}
+
+/* Skills */
+.skills{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.skill{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:16px;padding:28px 24px;
+  transition:transform .3s, border-color .3s;
+}
+.skill:hover{transform:translateY(-4px);border-color:rgba(0,201,167,0.3)}
+.skill-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg, rgba(0,201,167,0.2), rgba(59,130,246,0.2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:16px;
+}
+.skill h4{font-size:17px;font-weight:800;margin-bottom:8px}
+.skill p{color:var(--muted);font-size:13.5px}
+
+/* Strengths */
+.strengths{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.strength{
+  background:linear-gradient(180deg, rgba(0,201,167,0.05), transparent);
+  border:1px solid var(--line);
+  border-radius:16px;padding:32px 26px;
+  position:relative;overflow:hidden;
+}
+.strength::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg, var(--teal), var(--blue));
+}
+.strength-num{
+  font-size:56px;font-weight:900;line-height:1;
+  background:linear-gradient(135deg, var(--teal), var(--blue));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:14px;
+}
+.strength h4{font-size:18px;font-weight:800;margin-bottom:10px}
+.strength p{color:var(--muted);font-size:14px}
+
+/* CTA */
+.cta-wrap{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0,201,167,0.18), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(59,130,246,0.16), transparent 50%),
+    rgba(255,255,255,0.03);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:60px 32px;text-align:center;
+}
+.cta-wrap h2{
+  font-size:clamp(28px,4vw,40px);
+  font-weight:900;margin-bottom:14px;
+  letter-spacing:-0.01em;
+}
+.cta-wrap p{color:var(--muted);margin-bottom:32px;font-size:15px}
+.cta-buttons{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+}
+.btn-cw{
+  background:#fff;color:#1a4ba0;font-weight:800;
+  padding:14px 28px;border-radius:10px;font-size:15px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-cw:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,255,255,0.2)}
+.btn-coconala{
+  background:#FF7A4D;color:#fff;font-weight:800;
+  padding:14px 28px;border-radius:10px;font-size:15px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s, box-shadow .2s;
+}
+.btn-coconala:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,122,77,0.35)}
+
+/* Footer */
+footer{
+  border-top:1px solid var(--line);
+  padding:36px 24px;text-align:center;
+  color:var(--muted);font-size:13px;
+}
+footer .logo-sm{font-weight:800;color:var(--text);margin-bottom:8px}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media (max-width:768px){
+  .work, .work.reverse{grid-template-columns:1fr}
+  .work.reverse .work-img{order:0}
+  .work.reverse .work-content{order:1}
+  .work-content{padding:28px 24px}
+  .work-img{min-height:240px;max-height:380px}
+  .strengths{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:60px 20px}
+  .hero{padding:60px 20px 40px}
+  .nav-cta{padding:8px 14px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Rion &amp; Co.</div>
+    <a href="#contact" class="nav-cta">ご相談はこちら</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">PORTFOLIO 2026</div>
+  <h1>
+    AIで、<span class="grad">速く・美しく・安く。</span><br />
+    制作実績をご覧ください。
+  </h1>
+  <p>
+    Rion &amp; Co.（須賀井）の制作実績集です。AIを最大限に活用し、ホームページ・LP・チラシをスピーディーかつ高品質にお届けします。
+  </p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">3+</div><div class="stat-label">制作実績</div></div>
+    <div class="stat"><div class="stat-num">24h</div><div class="stat-label">即返信</div></div>
+    <div class="stat"><div class="stat-num">25</div><div class="stat-label">AIエージェント</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">オリジナル制作</div></div>
+  </div>
+</header>
+
+<section id="works">
+  <div class="reveal">
+    <div class="sec-eyebrow">Works</div>
+    <h2 class="sec-title">制作実績</h2>
+    <p class="sec-desc">実際に制作した作品です。すべてゼロからオリジナルでデザイン・コーディングしています。</p>
+  </div>
+
+  <div class="works">
+
+    <article class="work reveal">
+      <div class="work-img">
+        <img src="rakuten.png" alt="楽天市場LP 犬用サプリ「毎日散歩」" loading="lazy" />
+      </div>
+      <div class="work-content">
+        <div class="work-tag tag-ec">EC LP / RAKUTEN</div>
+        <h3>楽天市場LP — 犬用サプリ「毎日散歩」</h3>
+        <p class="work-desc">
+          関節サプリの楽天市場ページをフルリニューアル。悩み訴求から成分・レビュー・FAQ・購入導線まで、CVR重視で全14セクションを構築しました。
+        </p>
+        <div class="work-meta">
+          <span class="chip">HTML / CSS</span>
+          <span class="chip">レスポンシブ</span>
+          <span class="chip">CVR最適化</span>
+          <span class="chip">FAQアコーディオン</span>
+        </div>
+        <div class="work-links">
+          <a href="https://hikarusugai26-create.github.io/rakuten-lp-withpety/" target="_blank" rel="noopener" class="btn-primary">ライブで見る →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work reverse reveal">
+      <div class="work-img">
+        <img src="shiroari.png" alt="シロアリ駆除LP 新潟・長野北信エリア" loading="lazy" />
+      </div>
+      <div class="work-content">
+        <div class="work-tag tag-lp">SERVICE LP / LOCAL</div>
+        <h3>シロアリ駆除サービスLP — 新潟・長野北信</h3>
+        <p class="work-desc">
+          地域密着型シロアリ駆除サービスのジモティー集客用LP。信頼を獲得するための"見える施工"・料金透明性・5年保証を全面に押し出した設計です。
+        </p>
+        <div class="work-meta">
+          <span class="chip">HTML / CSS / JS</span>
+          <span class="chip">信頼獲得デザイン</span>
+          <span class="chip">料金比較表</span>
+          <span class="chip">FAQ</span>
+        </div>
+        <div class="work-links">
+          <a href="https://hikarusugai26-create.github.io/shiroari-niigata/" target="_blank" rel="noopener" class="btn-primary">ライブで見る →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work reveal">
+      <div class="work-img">
+        <img src="airef.png" alt="A4チラシデザイン 空調プラン" loading="lazy" />
+      </div>
+      <div class="work-content">
+        <div class="work-tag tag-flyer">A4 FLYER / B2B</div>
+        <h3>A4チラシ — ドラッグストア向け空調プラン</h3>
+        <p class="work-desc">
+          BtoB向け空調メンテナンスサービスのA4片面チラシ。「電気代もクレームも減らす」という訴求軸で、実績バッジ・3つの無償特典を視覚的に整理しました。
+        </p>
+        <div class="work-meta">
+          <span class="chip">A4印刷向け</span>
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">BtoB</span>
+          <span class="chip">バッジデザイン</span>
+        </div>
+        <div class="work-links">
+          <a href="https://hikarusugai26-create.github.io/airef-chirashi/" target="_blank" rel="noopener" class="btn-primary">ライブで見る →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="reveal">
+    <div class="sec-eyebrow">Skills</div>
+    <h2 class="sec-title">対応可能なお仕事</h2>
+    <p class="sec-desc">AIを駆使し、Web制作・チラシ・自動化など幅広く対応します。</p>
+  </div>
+  <div class="skills">
+    <div class="skill reveal">
+      <div class="skill-icon">🌐</div>
+      <h4>LP・ホームページ制作</h4>
+      <p>HTML/CSS/JSでオリジナル制作。スマホ対応・SEO基本設定込み。</p>
+    </div>
+    <div class="skill reveal">
+      <div class="skill-icon">📊</div>
+      <h4>Excel・スプレッドシート自動化</h4>
+      <p>VBA・GAS・関数で日報・集計・在庫管理などを自動化。</p>
+    </div>
+    <div class="skill reveal">
+      <div class="skill-icon">📄</div>
+      <h4>チラシ・販促物デザイン</h4>
+      <p>A4チラシ・名刺・販促物のデザイン制作。印刷データも対応。</p>
+    </div>
+    <div class="skill reveal">
+      <div class="skill-icon">🔍</div>
+      <h4>データ入力・リサーチ代行</h4>
+      <p>競合調査・リスト作成・データ整理をAI×人手で高速処理。</p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="reveal">
+    <div class="sec-eyebrow">Why us</div>
+    <h2 class="sec-title">選ばれる3つの理由</h2>
+  </div>
+  <div class="strengths">
+    <div class="strength reveal">
+      <div class="strength-num">01</div>
+      <h4>圧倒的な制作スピード</h4>
+      <p>AIを徹底活用し、通常1週間以上の作業を最短2〜3日で納品します。</p>
+    </div>
+    <div class="strength reveal">
+      <div class="strength-num">02</div>
+      <h4>テンプレート不使用</h4>
+      <p>毎回ゼロから設計。同じデザインは絶対に提供しません。</p>
+    </div>
+    <div class="strength reveal">
+      <div class="strength-num">03</div>
+      <h4>修正に強い・連絡が早い</h4>
+      <p>原則24時間以内に返信。修正も柔軟に対応します。</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta-wrap reveal">
+    <h2>お仕事のご相談、お待ちしています。</h2>
+    <p>クラウドワークス・ココナラからお気軽にご連絡ください。</p>
+    <div class="cta-buttons">
+      <a href="https://crowdworks.jp/public/employees/6938845" target="_blank" rel="noopener" class="btn-cw">クラウドワークスで依頼 →</a>
+      <a href="https://coconala.com/users/6014842" target="_blank" rel="noopener" class="btn-coconala">ココナラで依頼 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo-sm">Rion &amp; Co.</div>
+  <div>© 2026 Rion &amp; Co. — AI × 高速制作</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
