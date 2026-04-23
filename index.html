@@ -291,6 +291,51 @@ section{max-width:1200px;margin:0 auto;padding:80px 24px}
 }
 .btn-coconala:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,122,77,0.35)}
 
+/* Tools section */
+.tools{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+.tool{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px 22px;
+  transition:transform .3s, border-color .3s, background .3s;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.tool:hover{transform:translateY(-4px);border-color:rgba(0,201,167,0.3);background:rgba(255,255,255,0.06)}
+.tool-pr{
+  position:absolute;top:14px;right:14px;
+  font-size:9.5px;color:var(--muted);
+  background:rgba(255,255,255,0.06);
+  padding:3px 8px;border-radius:4px;
+  letter-spacing:0.1em;
+}
+.tool-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tool-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:800;
+  flex-shrink:0;
+}
+.tool-cat{font-size:10.5px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:3px}
+.tool-name{font-size:16px;font-weight:800;color:var(--text);letter-spacing:0.01em}
+.tool-desc{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px;flex:1}
+.tool-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--teal);font-size:12.5px;font-weight:700;
+  letter-spacing:0.05em;
+  border-top:1px solid var(--line);padding-top:14px;
+  transition:color .2s;
+}
+.tool-link:hover{color:var(--gold)}
+.tools-disclosure{
+  margin-top:30px;text-align:center;
+  font-size:11.5px;color:var(--muted);letter-spacing:0.05em;
+}
+
 /* Footer */
 footer{
   border-top:1px solid var(--line);
@@ -519,6 +564,96 @@ footer .logo-sm{font-weight:800;color:var(--text);margin-bottom:8px}
       <p>原則24時間以内に返信。修正も柔軟に対応します。</p>
     </div>
   </div>
+</section>
+
+<section id="tools">
+  <div class="reveal">
+    <div class="sec-eyebrow">Recommended Tools</div>
+    <h2 class="sec-title">使用ツール・おすすめ</h2>
+    <p class="sec-desc">Rion &amp; Co. が日々の制作・運営で実際に使用しているツールたち。フリーランス・個人事業主の方にもおすすめです。</p>
+  </div>
+  <div class="tools">
+
+    <a href="#aff-studio" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#000,#333);color:#fff;">S</div>
+        <div>
+          <div class="tool-cat">No-code Web Builder</div>
+          <div class="tool-name">STUDIO</div>
+        </div>
+      </div>
+      <p class="tool-desc">ノーコードで本格的なWebサイトが作れる国産ツール。デザイン性が高くLP・コーポレートサイト制作で愛用。</p>
+      <span class="tool-link">公式サイトを見る →</span>
+    </a>
+
+    <a href="#aff-xserver" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#1a4ba0,#2c6ec9);color:#fff;">X</div>
+        <div>
+          <div class="tool-cat">Web Hosting</div>
+          <div class="tool-name">エックスサーバー</div>
+        </div>
+      </div>
+      <p class="tool-desc">国内シェアNo.1のレンタルサーバー。WordPress高速化・自動バックアップ完備。納品サイトのホスティングに最適。</p>
+      <span class="tool-link">公式サイトを見る →</span>
+    </a>
+
+    <a href="#aff-canva" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#00C4CC,#7D2AE7);color:#fff;">C</div>
+        <div>
+          <div class="tool-cat">Design Tool</div>
+          <div class="tool-name">Canva Pro</div>
+        </div>
+      </div>
+      <p class="tool-desc">デザイン素材・テンプレートが無制限。チラシ・SNS画像・プレゼン資料の制作スピードが激変します。</p>
+      <span class="tool-link">無料で試す →</span>
+    </a>
+
+    <a href="#aff-freee" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#0091FF,#0066CC);color:#fff;">f</div>
+        <div>
+          <div class="tool-cat">Accounting / Cloud</div>
+          <div class="tool-name">freee 会計</div>
+        </div>
+      </div>
+      <p class="tool-desc">フリーランス・個人事業主必須の会計ソフト。確定申告・請求書発行・帳簿付けがすべて自動化できます。</p>
+      <span class="tool-link">30日無料で試す →</span>
+    </a>
+
+    <a href="#aff-conoha" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#5C2A78,#8C42AB);color:#fff;">C</div>
+        <div>
+          <div class="tool-cat">Server / VPS</div>
+          <div class="tool-name">ConoHa WING</div>
+        </div>
+      </div>
+      <p class="tool-desc">国内最速クラスのレンタルサーバー。初期費用無料・WordPress簡単インストール。スピード重視のサイト制作に。</p>
+      <span class="tool-link">公式サイトを見る →</span>
+    </a>
+
+    <a href="#aff-mufg" target="_blank" rel="sponsored noopener" class="tool reveal">
+      <span class="tool-pr">PR</span>
+      <div class="tool-head">
+        <div class="tool-icon" style="background:linear-gradient(135deg,#222,#444);color:#FFD700;">M</div>
+        <div>
+          <div class="tool-cat">Business Card</div>
+          <div class="tool-name">三井住友カード ビジネス</div>
+        </div>
+      </div>
+      <p class="tool-desc">フリーランス・個人事業主におすすめの法人カード。経費管理が楽になり、年会費永年無料プランあり。</p>
+      <span class="tool-link">詳細を見る →</span>
+    </a>
+
+  </div>
+  <div class="tools-disclosure">※ 当ページにはアフィリエイトリンクが含まれます。実際にRion &amp; Co.が使用しているサービスを掲載しています。</div>
 </section>
 
 <section id="contact">
